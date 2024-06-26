@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 import { Container } from "../components/shared";
 import { colors } from "../components/colors";
 
-import {Text, View, StyleSheet, TextInput} from 'react-native';
+import {Text, View, StyleSheet, TextInput, Button, TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import BigText from "../components/texts/BigText";
 import SmallText from "../components/texts/SmallText";
 import { ScreenHeight } from "../components/shared";
@@ -51,8 +51,26 @@ const styles = StyleSheet.create({
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-      marginBottom: 20,
+      marginBottom: 10,
       paddingHorizontal: 10,
+    },
+    button: {
+        backgroundColor: '#3498db',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    buttonText: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    rightAlignedText: {
+        color: '#000000',
+        fontSize: 10,
+        justifyContent: "flex-end",
+        alignItems: "flex-end",
     },
   });
 
@@ -75,14 +93,31 @@ const UserLogin: FunctionComponent = () => {
 
 
                 <LoginSection>
-                    <Text style={styles.label}>Name:</Text>
+                    <Text style={styles.label}></Text>
                         <TextInput
                             style={styles.input}
                             value={username}
                             onChangeText={setUsername}
-                            placeholder="Enter your name"
+                            placeholder="Username"
                     />
-                    <Text style={{fontSize: 10}}> LOGIN HERE</Text>
+                    <Text style={styles.label}></Text>
+                        <TextInput
+                            style={styles.input}
+                            value={password}
+                            onChangeText={setPassword}
+                            placeholder="Password"
+                    />
+
+                    <Text style={styles.rightAlignedText}>Forgot Password?</Text>
+
+                
+                    <Button
+                        onPress={() => <Text>Go to next page!!</Text>}
+                        title="Login"
+                        color="blue"
+                        accessibilityLabel="Login Button"
+                    />
+
                 </LoginSection>
                 
 
