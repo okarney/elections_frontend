@@ -5,9 +5,9 @@ import {colors} from "./colors";
 export const Container = styled.View `
     flex: 1;
     align-items: center;
-    background-colors: ${colors.white};
+    background-color: ${colors.white};
 
 `;
 
-export const ScreenWidth = Dimensions.get("screen").width;
-export const ScreenHeight = Dimensions.get("screen").height;
+export const ScreenWidth = Dimensions.get("window").width;
+export const ScreenHeight = Dimensions.get("window").height;
