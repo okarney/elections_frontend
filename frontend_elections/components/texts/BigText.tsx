@@ -11,9 +11,7 @@ const StyledText = styled.Text`
 `
 
 const BigText: FunctionComponent<TextProps> = (props) => {
-    return <>
-        <StyledText style={props.textStyles}>{props.children}</StyledText>;
-    </>;
+    return <StyledText style={props.textStyles}>{props.children}</StyledText>;
 };
 
 export default BigText;

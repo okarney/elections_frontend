@@ -10,7 +10,7 @@ import BigText from "../components/texts/BigText";
 import SmallText from "../components/texts/SmallText";
 import { ScreenHeight } from "../components/shared";
 import { ScreenWidth } from "../components/shared";
-
+import RegularButton from "../components/buttons/RegularButton";
 
 const UserLoginContainer = styled(Container)`
     width: ScreenWidth;
@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
         fontSize: 10,
         justifyContent: "flex-end",
         alignItems: "flex-end",
+        marginBottom: 30,
+        marginLeft: 1,
     },
   });
 
@@ -87,7 +89,7 @@ const UserLogin: FunctionComponent = () => {
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 75, color: "red"}}>POL</Text><Text style={{fontSize: 75, color: "blue"}}>TECH</Text>                
+                    <Text style={{fontSize: 75, color: "blue"}}>POL</Text><Text style={{fontSize: 75, color: "red"}}>TECH</Text>                
                 </TitleSection>
 
 
@@ -110,17 +112,12 @@ const UserLogin: FunctionComponent = () => {
 
                     <Text style={styles.rightAlignedText}>Forgot Password?</Text>
 
-                
-                    <Button
-                        onPress={() => <Text>Go to next page!!</Text>}
-                        title="Login"
-                        color="blue"
-                        accessibilityLabel="Login Button"
-                    />
+
+                    <RegularButton onPress={() => alert("Button Pressed!!!")}>Login</RegularButton>
 
                 </LoginSection>
-                
 
+                
 
             </UserLoginContainer>
 
