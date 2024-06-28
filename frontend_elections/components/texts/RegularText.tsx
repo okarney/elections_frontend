@@ -5,13 +5,13 @@ import {colors} from "../colors";
 import {TextProps} from "./types";
 
 const StyledText = styled.Text`
-    font-size: 13px;
+    font-size: 20px;
     color: ${colors.black};
     text-align: left;
 `
 
-const SmallText: FunctionComponent<TextProps> = (props) => {
+const RegularText: FunctionComponent<TextProps> = (props) => {
     return <StyledText style={props.textStyles}>{props.children}</StyledText>;
 };
 
-export default SmallText;
+export default RegularText;

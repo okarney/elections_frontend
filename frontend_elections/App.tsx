@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import UserLogin from './screens/UserLogin';
+
+//React Navigation
+
+import RootStack from './navigators/RootStack';
+
 
 
 export default function App() {
   return (
-    <UserLogin />
+    <RootStack/>
   );
 }
 

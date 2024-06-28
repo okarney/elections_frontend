@@ -2,6 +2,8 @@ import React, {FunctionComponent, useState} from "react";
 import {StatusBar} from "expo-status-bar";
 import styled from "styled-components/native";
 
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
+
 import { Container } from "../components/shared";
 import { colors } from "../components/colors";
 
@@ -10,7 +12,7 @@ import BigText from "../components/texts/BigText";
 import SmallText from "../components/texts/SmallText";
 import { ScreenHeight } from "../components/shared";
 import { ScreenWidth } from "../components/shared";
-
+import RegularButton from "../components/buttons/RegularButton";
 
 const UserLoginContainer = styled(Container)`
     width: ScreenWidth;
@@ -71,10 +73,16 @@ const styles = StyleSheet.create({
         fontSize: 10,
         justifyContent: "flex-end",
         alignItems: "flex-end",
+        marginBottom: 30,
+        marginLeft: 1,
     },
   });
 
-const UserLogin: FunctionComponent = () => {
+interface UserLoginProps {
+    navigation: NavigationProp<ParamListBase>;
+}
+
+const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -87,7 +95,7 @@ const UserLogin: FunctionComponent = () => {
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 75, color: "red"}}>POL</Text><Text style={{fontSize: 75, color: "blue"}}>TECH</Text>                
+                    <Text style={{fontSize: 75, color: "blue"}}>POL</Text><Text style={{fontSize: 75, color: "red"}}>TECH</Text>                
                 </TitleSection>
 
 
@@ -110,17 +118,12 @@ const UserLogin: FunctionComponent = () => {
 
                     <Text style={styles.rightAlignedText}>Forgot Password?</Text>
 
-                
-                    <Button
-                        onPress={() => <Text>Go to next page!!</Text>}
-                        title="Login"
-                        color="blue"
-                        accessibilityLabel="Login Button"
-                    />
+
+                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
 
                 </LoginSection>
-                
 
+                
 
             </UserLoginContainer>
 
