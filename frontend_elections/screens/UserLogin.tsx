@@ -2,6 +2,8 @@ import React, {FunctionComponent, useState} from "react";
 import {StatusBar} from "expo-status-bar";
 import styled from "styled-components/native";
 
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
+
 import { Container } from "../components/shared";
 import { colors } from "../components/colors";
 
@@ -76,7 +78,11 @@ const styles = StyleSheet.create({
     },
   });
 
-const UserLogin: FunctionComponent = () => {
+interface UserLoginProps {
+    navigation: NavigationProp<ParamListBase>;
+}
+
+const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -113,7 +119,7 @@ const UserLogin: FunctionComponent = () => {
                     <Text style={styles.rightAlignedText}>Forgot Password?</Text>
 
 
-                    <RegularButton onPress={() => alert("Button Pressed!!!")}>Login</RegularButton>
+                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
 
                 </LoginSection>
 
