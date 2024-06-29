@@ -13,7 +13,7 @@ import RegularButton from "../components/buttons/RegularButton";
 import BigText from "../components/texts/BigText";
 
 
-const GovPositionsContainer = styled(Container)`
+const FederalElectionsContainer = styled(Container)`
     width: ScreenWidth;
     height: ScreenHeight;
     flex: 1;
@@ -38,6 +38,14 @@ const Content = styled.View`
     height: 60%;
     flex: 1;
 `;
+const ElectionBox = styled.View`
+    width: 100%;
+    height: 30px;
+
+
+
+`
+
 
 const styles = StyleSheet.create({
     container: {
@@ -68,24 +76,16 @@ const GovPositions: FunctionComponent<GovPositionProps> = ({navigation}) => {
         <>
             <StatusBar style="dark"/>
 
-            <GovPositionsContainer>
+            <FederalElectionsContainer>
                 <TopPadding></TopPadding>
 
-                <BigText>Government Positions</BigText>
+                <BigText>Federal Elections</BigText>
                 
                 <Content>
-                    <RegularButton onPress={() => navigation.navigate('UserLogin')}>Federal Elections</RegularButton>
                     
-                    <ButtonPadding></ButtonPadding>
-                    
-                    <RegularButton onPress={() => navigation.navigate('StateElections')}>State Elections</RegularButton>
-
-                    <ButtonPadding></ButtonPadding>
-                    
-                    <RegularButton onPress={() => navigation.navigate('LocalElections')}>Local Elections</RegularButton>
                 </Content>
 
-            </GovPositionsContainer>
+            </FederalElectionsContainer>
         </> 
 
     );
