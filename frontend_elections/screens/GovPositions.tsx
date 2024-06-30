@@ -74,7 +74,7 @@ const GovPositions: FunctionComponent<GovPositionProps> = ({navigation}) => {
                 <BigText>Government Positions</BigText>
                 
                 <Content>
-                    <RegularButton onPress={() => navigation.navigate('UserLogin')}>Federal Elections</RegularButton>
+                    <RegularButton onPress={() => navigation.navigate('FederalElections')}>Federal Elections</RegularButton>
                     
                     <ButtonPadding></ButtonPadding>
                     

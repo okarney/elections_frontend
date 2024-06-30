@@ -15,7 +15,7 @@ import LocalElections from "../screens/LocalElection";
 export type RootStackParamList = {
     UserLogin: undefined;
     GovPositions: undefined;
-    FederalElecitons: undefined;
+    FederalElections: undefined;
     StateElections: undefined;
     LocalElections: undefined;
 
@@ -46,7 +46,7 @@ const RootStack: FunctionComponent = () => {
                     options={{headerShown: false}}
                 />
                 <Stack.Screen
-                    name="FederalElecitons"
+                    name="FederalElections"
                     component={FederalElections}
                     options={{headerShown: false}}
                 />
