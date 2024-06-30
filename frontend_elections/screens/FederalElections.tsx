@@ -2,6 +2,7 @@ import React, {FunctionComponent, useState} from "react";
 import {Button, StyleSheet} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
+import {ScrollView} from "react-native";
 
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
 
@@ -11,7 +12,7 @@ import { colors } from "../components/colors";
 import RegularText from "../components/texts/RegularText";
 import RegularButton from "../components/buttons/RegularButton";
 import BigText from "../components/texts/BigText";
-
+import ElectionBox from "../components/ElectionBox";
 
 const FederalElectionsContainer = styled(Container)`
     width: ScreenWidth;
@@ -27,24 +28,19 @@ const TopPadding = styled.View`
 
 const ButtonPadding = styled.View`
     width: 100%;
-    height: 14%;
+    height: 5%;
 `;
 
 const Content = styled.View`
     justify-content: center;
     align-items: center;
-    flexDirection: column;
+    flex-direction: column;
     width: 90%;
     height: 60%;
     flex: 1;
+    margin-top: 2%;
 `;
-const ElectionBox = styled.View`
-    width: 100%;
-    height: 30px;
 
-
-
-`
 
 
 const styles = StyleSheet.create({
@@ -52,6 +48,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         justifyContent: 'center',
+        width: 350,
       },
     button: {
         backgroundColor: '#3498db',
@@ -64,14 +61,18 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+    electionBoxWrapper: {
+        width: 350,
+        paddingHorizontal: 10,
+      },
   });
 
 
-interface GovPositionProps {
+interface FederalElectionsProps {
     navigation: NavigationProp<ParamListBase>;
 }
 
-const GovPositions: FunctionComponent<GovPositionProps> = ({navigation}) => {
+const FederalElections: FunctionComponent<FederalElectionsProps> = ({navigation}) => {
     return (
         <>
             <StatusBar style="dark"/>
@@ -81,9 +82,36 @@ const GovPositions: FunctionComponent<GovPositionProps> = ({navigation}) => {
 
                 <BigText>Federal Elections</BigText>
                 
-                <Content>
+                <ButtonPadding></ButtonPadding>
+                <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: "center", alignItems: "center"}}>
                     
-                </Content>
+                    <Content style={styles.electionBoxWrapper}>
+
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
+
+                    </Content>
+                </ScrollView>
+
 
             </FederalElectionsContainer>
         </> 
@@ -91,4 +119,4 @@ const GovPositions: FunctionComponent<GovPositionProps> = ({navigation}) => {
     );
 }
 
-export default GovPositions;
+export default FederalElections;
