@@ -13,6 +13,7 @@ import RegularText from "../components/texts/RegularText";
 import RegularButton from "../components/buttons/RegularButton";
 import BigText from "../components/texts/BigText";
 import ElectionBox from "../components/ElectionBox";
+import ExpandElectionBox from "../components/ExpandElectionBox";
 
 const FederalElectionsContainer = styled(Container)`
     width: ScreenWidth;
@@ -35,9 +36,9 @@ const Content = styled.View`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex: 1;
     width: 90%;
     height: 60%;
-    flex: 1;
     margin-top: 2%;
 `;
 
@@ -65,6 +66,14 @@ const styles = StyleSheet.create({
         width: 350,
         paddingHorizontal: 10,
       },
+      rightAlignedText: {
+        color: '#000000',
+        fontSize: 10,
+        justifyContent: "flex-end",
+        alignItems: "flex-end",
+        marginBottom: 30,
+        marginLeft: 1,
+    },
   });
 
 
@@ -83,10 +92,17 @@ const FederalElections: FunctionComponent<FederalElectionsProps> = ({navigation}
                 <BigText>Federal Elections</BigText>
                 
                 <ButtonPadding></ButtonPadding>
-                <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: "center", alignItems: "center"}}>
+                <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: "center", alignItems: "center", paddingBottom: 20}}>
                     
                     <Content style={styles.electionBoxWrapper}>
 
+                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Name of Incumbent</ElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        
+                        <ExpandElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ExpandElectionBox>
+                        <ButtonPadding></ButtonPadding>
+                        
+                        
                         <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
                         <ButtonPadding></ButtonPadding>
                         <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
@@ -95,20 +111,7 @@ const FederalElections: FunctionComponent<FederalElectionsProps> = ({navigation}
                         <ButtonPadding></ButtonPadding>
                         <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
                         <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-                        <ButtonPadding></ButtonPadding>
-                        <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Presidential Elections</ElectionBox>
-
+                        
                     </Content>
                 </ScrollView>
 
