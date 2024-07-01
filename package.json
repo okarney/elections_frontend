@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "expo": "^51.0.17",
+    "react-native-gesture-handler": "~2.16.1",
+    "typescript": "~5.3.3"
+  }
+}
