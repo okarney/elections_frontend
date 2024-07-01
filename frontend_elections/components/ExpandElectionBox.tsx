@@ -15,7 +15,7 @@ import RegularText from "./texts/RegularText";
 
 const styles = StyleSheet.create({
     
-    rightAlignedText: {
+    leftAlignedText: {
         color: '#000000',
         fontSize: 10,
         alignSelf:"flex-start",
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
   });
 
-const ElectionBoxView = styled.TouchableOpacity`
+const ExpandElectionBoxView = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
@@ -35,24 +35,28 @@ const ElectionBoxView = styled.TouchableOpacity`
     border-radius: 5px;
 `;
 
-interface ElectionBoxProps {
+interface ExpandElectionBoxProps {
     btnStyles?: StyleProp<ViewStyle>;
     onPress: ((event: GestureResponderEvent) => void) | undefined;
     textStyles?: StyleProp<TextStyle>;
     children: React.ReactNode;
 }
 
-const ElectionBox: FunctionComponent<ElectionBoxProps> = (props) => {
+const ExpandElectionBox: FunctionComponent<ExpandElectionBoxProps> = (props) => {
     return (
 
-    <ElectionBoxView 
+    <ExpandElectionBoxView 
         onPress={props.onPress} style={props.btnStyles}>
-            <Text style={styles.rightAlignedText}>Position Name</Text>
+        
+        <RegularText textStyles={props.textStyles}>{props.children}</RegularText>
+  
+        <Text style={styles.leftAlignedText}>Currently: Name of Person</Text>
+        <Text style={styles.leftAlignedText}>Next Election: Date</Text>
+        <Text style={styles.leftAlignedText}>Canidates: Person1 and Person2</Text>
 
-            <RegularText textStyles={props.textStyles}>{props.children}</RegularText>
-    </ElectionBoxView>
+    </ExpandElectionBoxView>
 
     );
 }
 
-export default ElectionBox;
+export default ExpandElectionBox;
