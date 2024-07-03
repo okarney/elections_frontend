@@ -12,6 +12,7 @@ import {
 //components
 import {colors} from "./colors";
 import RegularText from "./texts/RegularText";
+import ElectionBoxText from "./texts/ElectionBoxText";
 
 const styles = StyleSheet.create({
     
@@ -31,7 +32,7 @@ const ExpandElectionBoxView = styled.TouchableOpacity`
     border-color: #000000;
     border-width: 1px;
     width: 100%;
-    height: 10%;
+    height: 20%;
     border-radius: 5px;
 `;
 
@@ -48,7 +49,7 @@ const ExpandElectionBox: FunctionComponent<ExpandElectionBoxProps> = (props) => 
     <ExpandElectionBoxView 
         onPress={props.onPress} style={props.btnStyles}>
         
-        <RegularText textStyles={props.textStyles}>{props.children}</RegularText>
+        <ElectionBoxText textStyles={props.textStyles}>{props.children}</ElectionBoxText>
   
         <Text style={styles.leftAlignedText}>Currently: Name of Person</Text>
         <Text style={styles.leftAlignedText}>Next Election: Date</Text>

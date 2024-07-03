@@ -12,6 +12,7 @@ import {
 //components
 import {colors} from "./colors";
 import RegularText from "./texts/RegularText";
+import ElectionBoxText from "./texts/ElectionBoxText";
 
 const styles = StyleSheet.create({
     
@@ -19,8 +20,9 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 10,
         alignSelf:"flex-start",
-        marginBottom: 10,
+        marginBottom: 5,
         marginLeft: 10,
+        marginTop: 10,
     },
   });
 
@@ -49,7 +51,7 @@ const ElectionBox: FunctionComponent<ElectionBoxProps> = (props) => {
         onPress={props.onPress} style={props.btnStyles}>
             <Text style={styles.rightAlignedText}>Position Name</Text>
 
-            <RegularText textStyles={props.textStyles}>{props.children}</RegularText>
+            <ElectionBoxText textStyles={props.textStyles}>{props.children}</ElectionBoxText>
     </ElectionBoxView>
 
     );

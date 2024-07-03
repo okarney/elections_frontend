@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
-    electionBoxWrapper: {
-        width: 350,
-        paddingHorizontal: 10,
-      },
+    // electionBoxWrapper: {
+    //     width: 100%,
+    //     paddingHorizontal: 10,
+    //   },
       rightAlignedText: {
         color: '#000000',
         fontSize: 10,
@@ -92,9 +92,9 @@ const FederalElections: FunctionComponent<FederalElectionsProps> = ({navigation}
                 <BigText>Federal Elections</BigText>
                 
                 <ButtonPadding></ButtonPadding>
-                <ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: "center", alignItems: "center", paddingBottom: 20}}>
+                {/*<ScrollView contentContainerStyle={{flexGrow: 1, justifyContent: "center", alignItems: "center", paddingBottom: 20}}>*/}
                     
-                    <Content style={styles.electionBoxWrapper}>
+                     <Content > 
 
                         <ElectionBox onPress={() => navigation.navigate('LocalElections')}>Name of Incumbent</ElectionBox>
                         <ButtonPadding></ButtonPadding>
@@ -113,7 +113,7 @@ const FederalElections: FunctionComponent<FederalElectionsProps> = ({navigation}
                         <ButtonPadding></ButtonPadding>
                         
                     </Content>
-                </ScrollView>
+                {/* </ScrollView> */}
 
 
             </FederalElectionsContainer>

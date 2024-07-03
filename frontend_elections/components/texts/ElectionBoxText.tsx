@@ -8,12 +8,12 @@ const StyledText = styled.Text`
     font-size: 20px;
     color: ${colors.black};
     text-align: left;
-    margin-bottom: 1%;
+    margin-bottom: 4%;
     margin-top: 1%;
 `
 
-const RegularText: FunctionComponent<TextProps> = (props) => {
+const ElectionBoxText: FunctionComponent<TextProps> = (props) => {
     return <StyledText style={props.textStyles}>{props.children}</StyledText>;
 };
 
-export default RegularText;
+export default ElectionBoxText;
