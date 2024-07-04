@@ -10,9 +10,8 @@ import {
 } from "react-native";
 
 //components
-import {colors} from "./colors";
-import RegularText from "./texts/RegularText";
-import ElectionBoxText from "./texts/ElectionBoxText";
+import RegularText from "../texts/RegularText";
+import ElectionBoxText from "../texts/ElectionBoxText";
 
 const styles = StyleSheet.create({
     
