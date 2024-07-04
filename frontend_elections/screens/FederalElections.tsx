@@ -12,8 +12,8 @@ import { colors } from "../components/colors";
 import RegularText from "../components/texts/RegularText";
 import RegularButton from "../components/buttons/RegularButton";
 import BigText from "../components/texts/BigText";
-import ElectionBox from "../components/ElectionBox";
-import ExpandElectionBox from "../components/ExpandElectionBox";
+import ElectionBox from "../components/buttons/ElectionBox";
+import ExpandElectionBox from "../components/buttons/ExpandElectionBox";
 
 const FederalElectionsContainer = styled(Container)`
     width: ScreenWidth;
