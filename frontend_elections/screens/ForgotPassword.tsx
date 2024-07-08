@@ -69,8 +69,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     rightAlignedText: {
-        color: 'blue',
-        textDecorationLine: 'underline',
+        color: '#000000',
         fontSize: 10,
         justifyContent: "flex-end",
         alignItems: "flex-end",
@@ -79,11 +78,11 @@ const styles = StyleSheet.create({
     },
   });
 
-interface UserLoginProps {
+interface ForgotPasswordProps {
     navigation: NavigationProp<ParamListBase>;
 }
 
-const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
+const ForgotPassword: FunctionComponent<ForgotPasswordProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -96,7 +95,7 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 75, color: "blue"}}>POL</Text><Text style={{fontSize: 75, color: "red"}}>TECH</Text>                
+                    <Text style={{fontSize: 75, color: "blue"}}>Forgot Password</Text>                
                 </TitleSection>
 
 
@@ -117,9 +116,7 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                             placeholder="Password"
                     />
 
-                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                        <Text style={styles.rightAlignedText}>Forgot Password?</Text>
-                    </TouchableOpacity>
+                    <Text style={styles.rightAlignedText}>Forgot Password?</Text>
 
 
                     <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
@@ -140,4 +137,4 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     );
 };
 
-export default UserLogin;
+export default ForgotPassword;
