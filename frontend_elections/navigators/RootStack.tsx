@@ -12,6 +12,7 @@ import FederalElections from "../screens/FederalElections";
 import StateElections from "../screens/StateElections";
 import LocalElections from "../screens/LocalElection";
 import ForgotPassword from "../screens/ForgotPassword";
+import SignUp from "../screens/SignUp";
 
 export type RootStackParamList = {
     UserLogin: undefined;
@@ -20,6 +21,7 @@ export type RootStackParamList = {
     StateElections: undefined;
     LocalElections: undefined;
     ForgotPassword: undefined;
+    SignUp: undefined;
 
 };
 
@@ -65,6 +67,11 @@ const RootStack: FunctionComponent = () => {
                 <Stack.Screen
                     name="ForgotPassword"
                     component={ForgotPassword}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="SignUp"
+                    component={SignUp}
                     options={{headerShown: false}}
                 />
             </Stack.Navigator>
