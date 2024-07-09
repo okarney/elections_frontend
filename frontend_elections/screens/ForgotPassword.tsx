@@ -13,6 +13,7 @@ import SmallText from "../components/texts/SmallText";
 import { ScreenHeight } from "../components/shared";
 import { ScreenWidth } from "../components/shared";
 import RegularButton from "../components/buttons/RegularButton";
+import RegularText from "../components/texts/RegularText";
 
 const UserLoginContainer = styled(Container)`
     width: ScreenWidth;
@@ -27,7 +28,6 @@ const TopPadding = styled.View`
 const TitleSection = styled.View`
     justify-content: center;
     align-items: center;
-    flexDirection: row;
     width: 90%;
     height: 15%;
 `;
@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
     },
     label: {
       fontSize: 18,
-      marginBottom: 10,
+      marginBottom: 20,
     },
     input: {
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-      marginBottom: 10,
+      marginBottom: 35,
       paddingHorizontal: 10,
     },
     button: {
@@ -68,14 +68,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
-    rightAlignedText: {
-        color: '#000000',
-        fontSize: 10,
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
-        marginBottom: 30,
-        marginLeft: 1,
-    },
   });
 
 interface ForgotPasswordProps {
@@ -83,8 +75,7 @@ interface ForgotPasswordProps {
 }
 
 const ForgotPassword: FunctionComponent<ForgotPasswordProps> = ({navigation}) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
 
     return (
@@ -95,31 +86,30 @@ const ForgotPassword: FunctionComponent<ForgotPasswordProps> = ({navigation}) =>
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 75, color: "blue"}}>Forgot Password</Text>                
+                    <Text style={{fontSize: 35, color: "black", marginBottom: 20}}>Forgot Your Password?</Text> 
+                    <Text style={{fontSize: 15, color: "black", marginBottom: 20, textAlign: "center"}}>Enter your email below, and we will send you instructions to reset your password.</Text> 
                 </TitleSection>
 
 
 
                 <LoginSection>
+                    
                     <Text style={styles.label}></Text>
                         <TextInput
                             style={styles.input}
-                            value={username}
-                            onChangeText={setUsername}
-                            placeholder="Username"
-                    />
-                    <Text style={styles.label}></Text>
-                        <TextInput
-                            style={styles.input}
-                            value={password}
-                            onChangeText={setPassword}
-                            placeholder="Password"
+                            value={email}
+                            onChangeText={setEmail}
+                            placeholder="Email Address"
                     />
 
-                    <Text style={styles.rightAlignedText}>Forgot Password?</Text>
+
+                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Continue</RegularButton>
 
 
-                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('UserLogin')}>
+                        <Text style={{textAlign: "center", fontSize: 12, marginTop: 16, color: "blue", textDecorationLine: "underline"}}>Back to Login Screen</Text>
+                    </TouchableOpacity>
 
                 </LoginSection>
 
