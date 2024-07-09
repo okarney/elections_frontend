@@ -27,7 +27,6 @@ const TopPadding = styled.View`
 const TitleSection = styled.View`
     justify-content: center;
     align-items: center;
-    flexDirection: row;
     width: 90%;
     height: 15%;
 `;
@@ -37,6 +36,11 @@ const LoginSection = styled.View`
     height:20%;
     flex: 1;
     
+`;
+
+const MiddlePadding = styled.View`
+    width: 100%;
+    height: 5%;
 `;
 
 const styles = StyleSheet.create({
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-      marginBottom: 10,
+      marginBottom: 15,
       paddingHorizontal: 10,
     },
     button: {
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 20,
     },
     buttonText: {
         color: '#ffffff',
@@ -98,7 +102,9 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 55, color: "blue"}}>Sign Up</Text>                
+                    <Text style={{fontSize: 55, color: "black", textAlign: "center"}}>Sign Up</Text>  
+                    <Text style={{fontSize: 15, color: "black", marginBottom: 10, marginTop: 15, textAlign: "center"}}>Enter your details to create your account.</Text>                
+              
                 </TitleSection>
 
 
@@ -141,7 +147,7 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
                     />
 
                    
-
+                    <MiddlePadding></MiddlePadding>
 
                     <RegularButton onPress={() => navigation.navigate('UserLogin')}>Sign Up</RegularButton>
 
