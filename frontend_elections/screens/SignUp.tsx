@@ -79,11 +79,13 @@ const styles = StyleSheet.create({
     },
   });
 
-interface UserLoginProps {
+interface SignUpProps {
     navigation: NavigationProp<ParamListBase>;
 }
 
-const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
+const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -96,12 +98,26 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                 <TopPadding></TopPadding>
 
                 <TitleSection>
-                    <Text style={{fontSize: 75, color: "blue"}}>POL</Text><Text style={{fontSize: 75, color: "red"}}>TECH</Text>                
+                    <Text style={{fontSize: 55, color: "blue"}}>Sign Up</Text>                
                 </TitleSection>
 
 
 
                 <LoginSection>
+                    <Text style={styles.label}></Text>
+                        <TextInput
+                            style={styles.input}
+                            value={firstName}
+                            onChangeText={setFirstName}
+                            placeholder="First Name"
+                    />
+                    <Text style={styles.label}></Text>
+                        <TextInput
+                            style={styles.input}
+                            value={lastName}
+                            onChangeText={setLastName}
+                            placeholder="Last Name"
+                    />
                     <Text style={styles.label}></Text>
                         <TextInput
                             style={styles.input}
@@ -116,19 +132,25 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                             onChangeText={setPassword}
                             placeholder="Password"
                     />
+                    <Text style={styles.label}></Text>
+                        <TextInput
+                            style={styles.input}
+                            value={password}
+                            onChangeText={setPassword}
+                            placeholder="Retype Password"
+                    />
 
-                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                        <Text style={{textAlign: "left", fontSize: 10, marginBottom: 20, color: "blue", textDecorationLine: "underline"}}>Forgot Password?</Text>
-                    </TouchableOpacity>
-
-
-                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
-
-                    <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                        <Text style={{textAlign: "center", fontSize: 13, marginBottom: 20, marginTop: 10, color: "blue"}}>Don't have an account?</Text>
-                    </TouchableOpacity>
+                   
 
 
+                    <RegularButton onPress={() => navigation.navigate('UserLogin')}>Sign Up</RegularButton>
+
+                    
+                    
+
+
+
+                        
                 </LoginSection>
 
                 
@@ -145,4 +167,4 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     );
 };
 
-export default UserLogin;
+export default SignUp;
