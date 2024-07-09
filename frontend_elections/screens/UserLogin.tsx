@@ -118,7 +118,7 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                     />
 
                     <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-                        <Text style={styles.rightAlignedText}>Forgot Password?</Text>
+                        <Text style={{textAlign: "left", fontSize: 10, marginBottom: 20, color: "blue", textDecorationLine: "underline"}}>Forgot Password?</Text>
                     </TouchableOpacity>
 
 
