@@ -13,6 +13,8 @@ import SmallText from "../components/texts/SmallText";
 import { ScreenHeight } from "../components/shared";
 import { ScreenWidth } from "../components/shared";
 import RegularButton from "../components/buttons/RegularButton";
+import { userLogin } from "../api/userApi";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const UserLoginContainer = styled(Container)`
     width: ScreenWidth;
@@ -87,6 +89,20 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleLogin = () => {
+        userLogin({
+            "username":username,
+            "password":password,
+        }).then((result) => {
+            if (result.status == 200) {
+                AsyncStorage.setItem("AccessToken", result.data.token)
+                navigation.navigate("GovPositions")
+            }
+        }).catch(error => {
+            console.error(error);
+        })
+    }
+
 
     return (
         <>
@@ -122,7 +138,8 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                     </TouchableOpacity>
 
 
-                    <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton>
+                    {/* <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton> */}
+                    <RegularButton onPress={handleLogin}>Login</RegularButton>
 
                     <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                         <Text style={{textAlign: "center", fontSize: 13, marginBottom: 20, marginTop: 10, color: "blue"}}>Don't have an account?</Text>
