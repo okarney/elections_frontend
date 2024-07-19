@@ -141,7 +141,6 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                     {/* <RegularButton onPress={() => navigation.navigate('GovPositions')}>Login</RegularButton> */}
                     <RegularButton onPress={handleLogin}>Login</RegularButton>
 
-                    console.log(userLogin)
 
                     <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                         <Text style={{textAlign: "center", fontSize: 13, marginBottom: 20, marginTop: 10, color: "blue"}}>Don't have an account?</Text>
