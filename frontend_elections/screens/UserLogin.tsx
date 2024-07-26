@@ -88,10 +88,13 @@ interface UserLoginProps {
 const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+
 
     const handleLogin = () => {
         userLogin({
             "username":username,
+            "email": email,
             "password":password,
         }).then((result) => {
             if (result.status == 200) {
@@ -128,7 +131,16 @@ const UserLogin: FunctionComponent<UserLoginProps> = ({navigation}) => {
                     <Text style={styles.label}></Text>
                         <TextInput
                             style={styles.input}
+                            value={email}
+                            secureTextEntry={true}
+                            onChangeText={setEmail}
+                            placeholder="Email"
+                    />
+                    <Text style={styles.label}></Text>
+                        <TextInput
+                            style={styles.input}
                             value={password}
+                            secureTextEntry={true}
                             onChangeText={setPassword}
                             placeholder="Password"
                     />

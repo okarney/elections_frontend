@@ -2,6 +2,7 @@ import ApiManager from "./ApiManager";
 
 interface LoginData {
     username: string;
+    email: string;
     password: string;
 }
 
