@@ -28,7 +28,7 @@ const TitleSection = styled.View`
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 15%;
+    height: 80%;
 `;
 
 const LoginSection = styled.View`
@@ -54,13 +54,14 @@ const styles = StyleSheet.create({
       marginBottom: 10,
     },
     input: {
-      height: "8%",
-      width: "90%",
+      height: 55,
+      width: "100%",
       borderColor: 'gray',
       borderWidth: 1,
       marginBottom: 15,
       marginTop: 0,
-      paddingHorizontal: 10,
+      paddingHorizontal: 5,
+
     },
     button: {
         backgroundColor: '#3498db',
@@ -85,10 +86,11 @@ const styles = StyleSheet.create({
         marginLeft: 1,
     },
     scrollViewContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         flexGrow: 1,
         padding: 20,
+        backgroundColor: "white",
     },
   });
 
@@ -106,20 +108,21 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [retypePassword, setRetypePassword] = useState('');
+    // const [retypePassword, setRetypePassword] = useState('');
 
 
     // const [firstNameError, setFirstNameError] = useState('');
     // const [lastNameError, setLastNameError] = useState('');
     const [usernameError, setUsernameError] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     // const [retypePasswordError, setRetypePasswordError] = useState('');
 
     const handleSignUp = () => {
 
-        if (password !== retypePassword) {
-            alert("Passwords do not match! Please type matching passwords and try again.")
-        }
+        // if (password !== retypePassword) {
+        //     alert("Passwords do not match! Please type matching passwords and try again.")
+        // }
 
         //Error messages
 
@@ -133,6 +136,10 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
 
         if (username === '') {
             setUsernameError("This is a required field.")
+        }
+
+        if (email === '') {
+            setEmailError("This is a required field.")
         }
 
         if (password === '') {
@@ -155,9 +162,9 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
 
     return (
         <>
-            <StatusBar style="light"/>
-            {/*<ScrollView style ={styles.scrollViewContainer} keyboardShouldPersistTaps="handled">*/}
-            <UserLoginContainer>
+            {/* <StatusBar style="light"/> */}
+            <ScrollView style ={styles.scrollViewContainer} keyboardShouldPersistTaps="handled">
+            {/* <UserLoginContainer> */}
 
                 <TopPadding></TopPadding>
 
@@ -205,6 +212,9 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
                             placeholder="Email"
                     />
 
+                    {emailError ? <Text style={{color: "red", marginTop: "0%", marginBottom: "2%"}}>{emailError}</Text> : null}
+
+
                     <Text style={styles.label}></Text>
                         <TextInput
                             style={styles.input}
@@ -241,9 +251,9 @@ const SignUp: FunctionComponent<SignUpProps> = ({navigation}) => {
 
                 
 
-            </UserLoginContainer>
+            {/* </UserLoginContainer> */}
 
-            {/* </ScrollView> */}
+            </ScrollView>
 
 
 
